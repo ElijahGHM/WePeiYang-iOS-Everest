@@ -175,6 +175,9 @@
 		36FCC2D520544E35003379AE /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 36FCC2D420544E35003379AE /* LoadingView.xib */; };
 		36FCC2D920545967003379AE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FCC2D820545967003379AE /* LoginView.swift */; };
 		52F72000615E6A46CCDF7B8C /* Pods_WePeiYang.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1891C813FFA3E343EC0ED374 /* Pods_WePeiYang.framework */; };
+		742104E4228F16A400A23C83 /* AnswerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E3228F16A400A23C83 /* AnswerMainViewController.swift */; };
+		742104E6228F1C8D00A23C83 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E5228F1C8D00A23C83 /* ExamViewController.swift */; };
+		742104E8228F1CB900A23C83 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E7228F1CB900A23C83 /* NoticeViewController.swift */; };
 		78B400E7219C6366006A8A45 /* AuditHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */; };
 		78FB9E65217AE69D001DE39A /* LFCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */; };
 		78FB9E67217AEA3F001DE39A /* LFMarkCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E66217AEA3F001DE39A /* LFMarkCustomCell.swift */; };
@@ -466,6 +469,9 @@
 		3E2AFF1235C9C87488CB407A /* Pods-WePeiYangWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WePeiYangWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-WePeiYangWidget/Pods-WePeiYangWidget.release.xcconfig"; sourceTree = "<group>"; };
 		6E48DF45006ADE8419C6CF0C /* Pods_WePeiYangWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WePeiYangWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F6749BFC82CF9191336C6C5 /* Pods_WePeiYangTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WePeiYangTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		742104E3228F16A400A23C83 /* AnswerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMainViewController.swift; sourceTree = "<group>"; };
+		742104E5228F1C8D00A23C83 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
+		742104E7228F1CB900A23C83 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditHomeViewController.swift; sourceTree = "<group>"; };
 		78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		78FB9E66217AEA3F001DE39A /* LFMarkCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFMarkCustomCell.swift; sourceTree = "<group>"; };
@@ -1021,6 +1027,40 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		742104DF228F0F0B00A23C83 /* AnswerQuestion */ = {
+			isa = PBXGroup;
+			children = (
+				742104E0228F0F6600A23C83 /* Controller */,
+				742104E1228F0F6D00A23C83 /* View */,
+				742104E2228F0F7600A23C83 /* Model */,
+			);
+			path = AnswerQuestion;
+			sourceTree = "<group>";
+		};
+		742104E0228F0F6600A23C83 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				742104E3228F16A400A23C83 /* AnswerMainViewController.swift */,
+				742104E5228F1C8D00A23C83 /* ExamViewController.swift */,
+				742104E7228F1CB900A23C83 /* NoticeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		742104E1228F0F6D00A23C83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		742104E2228F0F7600A23C83 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		78FB9E62217AE66A001DE39A /* LostFound */ = {
 			isa = PBXGroup;
 			children = (
@@ -1343,6 +1383,7 @@
 		B19DAB881E6EF5C2004A50B5 /* WePeiYang */ = {
 			isa = PBXGroup;
 			children = (
+				742104DF228F0F0B00A23C83 /* AnswerQuestion */,
 				78FB9E62217AE66A001DE39A /* LostFound */,
 				DD0B76142158CBA5009A392C /* GPA */,
 				DD0B75CC2158C6ED009A392C /* YellowPage */,
@@ -1823,6 +1864,7 @@
 				361FB17A21843AFC00BD5A1E /* UploadingPicCell.swift in Sources */,
 				3614D55621D928BB0007B886 /* WLANHelper.swift in Sources */,
 				A5E117BB1F99DCBE00C86CA2 /* NotificationItem.swift in Sources */,
+				742104E4228F16A400A23C83 /* AnswerMainViewController.swift in Sources */,
 				36F631EE1FAB31C500E3261F /* BicycleUserBindViewController.swift in Sources */,
 				36449E641FA4BABA0036766B /* QuizView.swift in Sources */,
 				3644E20221D8E0E9001F13F9 /* BaseResponse.swift in Sources */,
@@ -1860,6 +1902,7 @@
 				3614D54921D9251A0007B886 /* ExamAssistant.swift in Sources */,
 				DD0B76292158CBA6009A392C /* GPAClassModel.swift in Sources */,
 				DD41A83B21A52F7100886BB4 /* AuditSearchModel.swift in Sources */,
+				742104E8228F1CB900A23C83 /* NoticeViewController.swift in Sources */,
 				78FB9E93217AEEC5001DE39A /* LostViewController.swift in Sources */,
 				365A46462035E35500738963 /* Storage.swift in Sources */,
 				A5E117B31F99DBD700C86CA2 /* ParkingSpots.swift in Sources */,
@@ -1911,6 +1954,7 @@
 				DD0B762A2158CBA6009A392C /* GPAStatModel.swift in Sources */,
 				36449E841FA4BAD10036766B /* TwentyCourseScoreViewController.swift in Sources */,
 				36449E6D1FA4BABA0036766B /* FinalView.swift in Sources */,
+				742104E6228F1C8D00A23C83 /* ExamViewController.swift in Sources */,
 				36449E471FA4BA9B0036766B /* Checkbox.swift in Sources */,
 				36449E871FA4BAD10036766B /* QuizTakingViewController.swift in Sources */,
 				3614D57A21D929FE0007B886 /* BookDetailTableHeaderView.swift in Sources */,
