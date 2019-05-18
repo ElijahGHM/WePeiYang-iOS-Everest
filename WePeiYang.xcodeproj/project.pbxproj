@@ -178,6 +178,7 @@
 		742104E4228F16A400A23C83 /* AnswerMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E3228F16A400A23C83 /* AnswerMainViewController.swift */; };
 		742104E6228F1C8D00A23C83 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E5228F1C8D00A23C83 /* ExamViewController.swift */; };
 		742104E8228F1CB900A23C83 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E7228F1CB900A23C83 /* NoticeViewController.swift */; };
+		742104EA228FA9F800A23C83 /* ExamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */; };
 		78B400E7219C6366006A8A45 /* AuditHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */; };
 		78FB9E65217AE69D001DE39A /* LFCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */; };
 		78FB9E67217AEA3F001DE39A /* LFMarkCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E66217AEA3F001DE39A /* LFMarkCustomCell.swift */; };
@@ -472,6 +473,7 @@
 		742104E3228F16A400A23C83 /* AnswerMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMainViewController.swift; sourceTree = "<group>"; };
 		742104E5228F1C8D00A23C83 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		742104E7228F1CB900A23C83 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDetailViewController.swift; sourceTree = "<group>"; };
 		78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditHomeViewController.swift; sourceTree = "<group>"; };
 		78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		78FB9E66217AEA3F001DE39A /* LFMarkCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFMarkCustomCell.swift; sourceTree = "<group>"; };
@@ -1043,6 +1045,7 @@
 				742104E3228F16A400A23C83 /* AnswerMainViewController.swift */,
 				742104E5228F1C8D00A23C83 /* ExamViewController.swift */,
 				742104E7228F1CB900A23C83 /* NoticeViewController.swift */,
+				742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1930,6 +1933,7 @@
 				361F885E204AF92D00BCFA19 /* BannerCell.swift in Sources */,
 				36DA7A5D1FA8A35C000DAF2B /* CacheManager.swift in Sources */,
 				36DA7A5C1FA8A35C000DAF2B /* FAB.swift in Sources */,
+				742104EA228FA9F800A23C83 /* ExamDetailViewController.swift in Sources */,
 				36E56BC61FC512230009BD6F /* CourseListView.swift in Sources */,
 				DD2A2ABD21B2DC5100EA6F8F /* CourseCollectionView.swift in Sources */,
 				3613DA222056F740000867AE /* UniversalExtension.swift in Sources */,
