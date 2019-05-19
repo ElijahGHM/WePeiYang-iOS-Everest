@@ -23,7 +23,7 @@ class AllModulesViewController: UIViewController {
         (title: "图书馆", image: UIImage(named: "libBtn")!, class: LibraryMainViewController.self, needLogin: true),
         (title: "失物招领", image: UIImage(named: "lfBtn")!, class: LostFoundPageViewController.self, needLogin: true)
         ,
-        (title: "理论答题", image: UIImage(named: "lfBtn")!, class: AnswerMainViewController.self, needLogin: true)]
+        (title: "理论答题", image: UIImage(named: "lfBtn")!, class: AnswerViewController.self, needLogin: true)]
 
     var collectionView: UICollectionView!
 

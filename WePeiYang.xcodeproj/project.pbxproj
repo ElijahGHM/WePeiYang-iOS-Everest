@@ -179,6 +179,9 @@
 		742104E6228F1C8D00A23C83 /* ExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E5228F1C8D00A23C83 /* ExamViewController.swift */; };
 		742104E8228F1CB900A23C83 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E7228F1CB900A23C83 /* NoticeViewController.swift */; };
 		742104EA228FA9F800A23C83 /* ExamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */; };
+		742104F2229138D500A23C83 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104F1229138D500A23C83 /* AnswerViewController.swift */; };
+		742104F422913A5A00A23C83 /* TopNewsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104F322913A5A00A23C83 /* TopNewsScrollView.swift */; };
+		74EB144222916D540091CCA0 /* AnswerExamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */; };
 		78B400E7219C6366006A8A45 /* AuditHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */; };
 		78FB9E65217AE69D001DE39A /* LFCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */; };
 		78FB9E67217AEA3F001DE39A /* LFMarkCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E66217AEA3F001DE39A /* LFMarkCustomCell.swift */; };
@@ -474,6 +477,9 @@
 		742104E5228F1C8D00A23C83 /* ExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewController.swift; sourceTree = "<group>"; };
 		742104E7228F1CB900A23C83 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
 		742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDetailViewController.swift; sourceTree = "<group>"; };
+		742104F1229138D500A23C83 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
+		742104F322913A5A00A23C83 /* TopNewsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNewsScrollView.swift; sourceTree = "<group>"; };
+		74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerExamTableViewCell.swift; sourceTree = "<group>"; };
 		78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditHomeViewController.swift; sourceTree = "<group>"; };
 		78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
 		78FB9E66217AEA3F001DE39A /* LFMarkCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFMarkCustomCell.swift; sourceTree = "<group>"; };
@@ -1046,6 +1052,7 @@
 				742104E5228F1C8D00A23C83 /* ExamViewController.swift */,
 				742104E7228F1CB900A23C83 /* NoticeViewController.swift */,
 				742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */,
+				742104F1229138D500A23C83 /* AnswerViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1053,6 +1060,8 @@
 		742104E1228F0F6D00A23C83 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				742104F322913A5A00A23C83 /* TopNewsScrollView.swift */,
+				74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1628,7 +1637,7 @@
 					};
 					B19DAB851E6EF5C2004A50B5 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = TYRRVX7RWJ;
+						DevelopmentTeam = 7TB848KK9F;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -1866,6 +1875,7 @@
 				368C3C8A204DAB4F00C1E6B6 /* WPYCustomError.swift in Sources */,
 				361FB17A21843AFC00BD5A1E /* UploadingPicCell.swift in Sources */,
 				3614D55621D928BB0007B886 /* WLANHelper.swift in Sources */,
+				742104F2229138D500A23C83 /* AnswerViewController.swift in Sources */,
 				A5E117BB1F99DCBE00C86CA2 /* NotificationItem.swift in Sources */,
 				742104E4228F16A400A23C83 /* AnswerMainViewController.swift in Sources */,
 				36F631EE1FAB31C500E3261F /* BicycleUserBindViewController.swift in Sources */,
@@ -2015,6 +2025,7 @@
 				36449E601FA4BABA0036766B /* TheoryCourseArticleReadingView.swift in Sources */,
 				369306951F2B976C008E90DC /* ModuleCollectionViewCell.swift in Sources */,
 				A554C4B11F99E43F00022A01 /* BicycleServiceNotificationController.swift in Sources */,
+				74EB144222916D540091CCA0 /* AnswerExamTableViewCell.swift in Sources */,
 				A5E117AF1F99DB8E00C86CA2 /* BicycleUser.swift in Sources */,
 				DD6A663621ABCEB10070C4B2 /* AuditPersonalCourseModel.swift in Sources */,
 				369140AF2020CBA30022BA3F /* NotificationName.swift in Sources */,
@@ -2024,6 +2035,7 @@
 				364922A120260CDC00DFDC35 /* LibraryModel.swift in Sources */,
 				363D0A701FE006990095DA57 /* LibraryCardDataProvider.swift in Sources */,
 				78FB9E9F217AEF79001DE39A /* ButtonGroups.swift in Sources */,
+				742104F422913A5A00A23C83 /* TopNewsScrollView.swift in Sources */,
 				A5E117B71F99DC9400C86CA2 /* NotificationList.swift in Sources */,
 				362B055221CD52A000B370E7 /* ARKeyWindow.swift in Sources */,
 				3614D54A21D9251A0007B886 /* ExamTableViewCell.swift in Sources */,
@@ -2297,7 +2309,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 201812081129;
-				DEVELOPMENT_TEAM = TYRRVX7RWJ;
+				DEVELOPMENT_TEAM = 7TB848KK9F;
 				INFOPLIST_FILE = WePeiYang/main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2325,7 +2337,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 201812081129;
-				DEVELOPMENT_TEAM = TYRRVX7RWJ;
+				DEVELOPMENT_TEAM = 7TB848KK9F;
 				INFOPLIST_FILE = WePeiYang/main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
