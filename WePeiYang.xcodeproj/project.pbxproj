@@ -239,6 +239,7 @@
 		B181B95A1EC5C21700B8198E /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181B9571EC5C21700B8198E /* FavViewController.swift */; };
 		B181B95F1EC5C24000B8198E /* AllModulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181B95D1EC5C24000B8198E /* AllModulesViewController.swift */; };
 		B19DABAA1E6EF5C2004A50B5 /* WePeiYangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19DABA91E6EF5C2004A50B5 /* WePeiYangUITests.swift */; };
+		CF231425228FAC7500A31C49 /* TestViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */; };
 		DD0B75F32158C6ED009A392C /* YellowPageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B75DD2158C6ED009A392C /* YellowPageSearchViewController.swift */; };
 		DD0B75F42158C6ED009A392C /* YellowPageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B75DE2158C6ED009A392C /* YellowPageDetailViewController.swift */; };
 		DD0B75F52158C6ED009A392C /* YellowPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B75DF2158C6ED009A392C /* YellowPageMainViewController.swift */; };
@@ -557,6 +558,7 @@
 		B19DABA51E6EF5C2004A50B5 /* WePeiYangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WePeiYangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B19DABA91E6EF5C2004A50B5 /* WePeiYangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WePeiYangUITests.swift; sourceTree = "<group>"; };
 		B19DABAB1E6EF5C2004A50B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewTableViewCell.swift; sourceTree = "<group>"; };
 		D77E7BD11F959EB50A5A0DED /* Pods-WePeiYangWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WePeiYangWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WePeiYangWidget/Pods-WePeiYangWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		DD0B75DD2158C6ED009A392C /* YellowPageSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowPageSearchViewController.swift; sourceTree = "<group>"; };
 		DD0B75DE2158C6ED009A392C /* YellowPageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowPageDetailViewController.swift; sourceTree = "<group>"; };
@@ -1053,6 +1055,7 @@
 		742104E1228F0F6D00A23C83 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1864,6 +1867,7 @@
 				36449E6F1FA4BABA0036766B /* CourseDetailTableViewCell.swift in Sources */,
 				361F8854204AF92100BCFA19 /* NewsModel.swift in Sources */,
 				368C3C8A204DAB4F00C1E6B6 /* WPYCustomError.swift in Sources */,
+				CF231425228FAC7500A31C49 /* TestViewTableViewCell.swift in Sources */,
 				361FB17A21843AFC00BD5A1E /* UploadingPicCell.swift in Sources */,
 				3614D55621D928BB0007B886 /* WLANHelper.swift in Sources */,
 				A5E117BB1F99DCBE00C86CA2 /* NotificationItem.swift in Sources */,
