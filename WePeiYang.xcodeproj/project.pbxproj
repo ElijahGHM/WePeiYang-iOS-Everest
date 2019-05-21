@@ -181,6 +181,8 @@
 		742104EA228FA9F800A23C83 /* ExamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */; };
 		742104F2229138D500A23C83 /* AnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104F1229138D500A23C83 /* AnswerViewController.swift */; };
 		742104F422913A5A00A23C83 /* TopNewsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104F322913A5A00A23C83 /* TopNewsScrollView.swift */; };
+		743212C22293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743212C12293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift */; };
+		743212C42293EEAA0076CCF3 /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743212C32293EEAA0076CCF3 /* NoticeDetailViewController.swift */; };
 		74EB144222916D540091CCA0 /* AnswerExamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */; };
 		78B400E7219C6366006A8A45 /* AuditHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */; };
 		78FB9E65217AE69D001DE39A /* LFCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */; };
@@ -480,6 +482,8 @@
 		742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDetailViewController.swift; sourceTree = "<group>"; };
 		742104F1229138D500A23C83 /* AnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerViewController.swift; sourceTree = "<group>"; };
 		742104F322913A5A00A23C83 /* TopNewsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNewsScrollView.swift; sourceTree = "<group>"; };
+		743212C12293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerNoticeTableViewCell.swift; sourceTree = "<group>"; };
+		743212C32293EEAA0076CCF3 /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
 		74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerExamTableViewCell.swift; sourceTree = "<group>"; };
 		78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditHomeViewController.swift; sourceTree = "<group>"; };
 		78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
@@ -1055,6 +1059,7 @@
 				742104E7228F1CB900A23C83 /* NoticeViewController.swift */,
 				742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */,
 				742104F1229138D500A23C83 /* AnswerViewController.swift */,
+				743212C32293EEAA0076CCF3 /* NoticeDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1062,6 +1067,7 @@
 		742104E1228F0F6D00A23C83 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				743212C12293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift */,
 				742104F322913A5A00A23C83 /* TopNewsScrollView.swift */,
 				74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */,
 				CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */,
@@ -1965,6 +1971,7 @@
 				0CB8164E1FA8877A001571A5 /* SettingsViewController.swift in Sources */,
 				36449E8A1FA4BAD10036766B /* PartyPersonalStatusViewController.swift in Sources */,
 				DD0B75FA2158C6ED009A392C /* SearchView.swift in Sources */,
+				743212C42293EEAA0076CCF3 /* NoticeDetailViewController.swift in Sources */,
 				78FB9E8B217AEE4C001DE39A /* LFWaterFlowViewLayout.swift in Sources */,
 				36449E621FA4BABA0036766B /* SignUpTableViewCell.swift in Sources */,
 				369D92092015D97A004BA1D0 /* WeekItemCell.swift in Sources */,
@@ -2077,6 +2084,7 @@
 				DD0B75F32158C6ED009A392C /* YellowPageSearchViewController.swift in Sources */,
 				A53602691FC6EC0500E3D1AF /* TJUBindingViewController.swift in Sources */,
 				78FB9E65217AE69D001DE39A /* LFCollectionReusableHeaderView.swift in Sources */,
+				743212C22293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift in Sources */,
 				78FB9E6B217AEA9D001DE39A /* LFSearchCustomCell.swift in Sources */,
 				78FB9E7C217AEC36001DE39A /* LostFoundDetailModel.swift in Sources */,
 				78FB9E6F217AEAE1001DE39A /* LostFoundCollectionViewCell.swift in Sources */,

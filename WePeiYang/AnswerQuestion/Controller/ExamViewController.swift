@@ -38,7 +38,20 @@ extension ExamViewController: UITableViewDelegate, UITableViewDataSource {
         return 90
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        self.navigationController?.pushViewController(ExamDetailViewController(), animated: true)
+        UIViewController.current()!.navigationController?.pushViewController(ExamDetailViewController(), animated: true)
+    }
+}
+extension UIViewController {
+    class func current(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
+        if let nav = base as? UINavigationController {
+            return current(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController {
+            return current(base: tab.selectedViewController)
+        }
+        if let presented = base?.presentedViewController {
+            return current(base: presented)
+        }
+        return base
     }
 }
