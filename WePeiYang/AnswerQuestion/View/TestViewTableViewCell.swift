@@ -12,7 +12,7 @@ import UIKit
 class TestViewTableViewCell: UITableViewCell {
     let titleLable = UILabel()
     let Lable = UILabel()
-    
+    let pointLable = UILabel()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -23,10 +23,17 @@ class TestViewTableViewCell: UITableViewCell {
         titleLable.text = "这是标题"
         contentView.addSubview(titleLable)
         
-        Lable.frame = CGRect(x: 0, y: 60, width: 150, height: 20)
+        pointLable.frame = CGRect(x: 0, y: 20, width: 20, height: 20)
+        pointLable.textColor = .newBlue
+        pointLable.text = "●"
+        contentView.addSubview(pointLable)
+
+        
+        Lable.frame = CGRect(x: 20, y: 60, width: 300, height: 20)
         Lable.text = "等待接口"
         contentView.addSubview(Lable)
-    }
+        
+        }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

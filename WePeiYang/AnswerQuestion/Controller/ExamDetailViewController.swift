@@ -10,15 +10,15 @@ import UIKit
 class ExamDetailViewController: UIViewController {
     let myTableView = UITableView(frame: .zero, style: .plain)
     let footButton = UIButton(frame: CGRect(x: 44, y: 100, width: Device.width, height: 36))
-    let tableViewCellTitle  = ["●  考试名称", "●  考试时间", "●  历史最高分", "●  通过状态", "●  有效成绩次数", "●  剩余考试次数"]
-    
+    let tableViewCellTitles  = ["考试名称", "考试时间", "历史最高分", "通过状态", "有效成绩次数", "剩余考试次数"]
+    let tableViewCellContents = ["形势与政策第三十七期", "201904..29-2019.05.05", "59", "未通过", "0次", "10次"]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "考试详情"
         self.view.backgroundColor = .white
         footButton.backgroundColor = .newBlue
         footButton.setTitle("开始考试", for: .normal)
-        footButton.layer.cornerRadius = 16
+        footButton.layer.cornerRadius = 4
         footButton.addTarget(self, action: #selector(ExamDetailViewController.click), for: .touchUpInside)
         loadTableView()
     }
@@ -63,7 +63,8 @@ extension ExamDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TestViewTableViewCell()
         cell.selectionStyle = UITableViewCell.SelectionStyle.none;
-        cell.titleLable.text = tableViewCellTitle[indexPath.row]
+        cell.titleLable.text = tableViewCellTitles[indexPath.row]
+        cell.Lable.text = tableViewCellContents[indexPath.row]
         
         return cell
     }
