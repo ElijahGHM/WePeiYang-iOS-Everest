@@ -1062,12 +1062,9 @@
 		742104E1228F0F6D00A23C83 /* View */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
 				742104F322913A5A00A23C83 /* TopNewsScrollView.swift */,
 				74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */,
-=======
 				CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */,
->>>>>>> 8336aca29479c6c2e58361c860501fb777a0dd89
 			);
 			path = View;
 			sourceTree = "<group>";

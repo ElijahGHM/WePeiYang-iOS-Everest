@@ -9,8 +9,9 @@
 import UIKit
 class ExamDetailViewController: UIViewController {
     let myTableView = UITableView(frame: .zero, style: .plain)
-    let footButton = UIButton(frame: CGRect(x: 44, y: 0, width: Device.width, height: 64))
-    let tableViewCellTitle  = ["考试名称", "考试时间", "历史最高分", "通过状态", "有效成绩", "剩余考试次数"]
+    let footButton = UIButton(frame: CGRect(x: 44, y: 100, width: Device.width, height: 36))
+    let tableViewCellTitle  = ["●  考试名称", "●  考试时间", "●  历史最高分", "●  通过状态", "●  有效成绩次数", "●  剩余考试次数"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "考试详情"
@@ -22,10 +23,10 @@ class ExamDetailViewController: UIViewController {
         loadTableView()
     }
     func loadTableView() {
-        myTableView.frame = CGRect(x: 22, y: 0, width: Device.width - 44, height: 700)
+        myTableView.frame = CGRect(x: 22, y: 0, width: Device.width - 44, height: 800)
         myTableView.dataSource = self
         myTableView.delegate = self
-//        myTableView.isUserInteractionEnabled = false
+        myTableView.isScrollEnabled = false
         
         view.addSubview(myTableView)
     }
@@ -68,16 +69,16 @@ extension ExamDetailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 84
+        return 106
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return footButton
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 64
+        return 36
     }
-
+    
     
     
 }
