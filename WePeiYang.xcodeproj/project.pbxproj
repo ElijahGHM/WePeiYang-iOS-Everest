@@ -183,6 +183,8 @@
 		742104F422913A5A00A23C83 /* TopNewsScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742104F322913A5A00A23C83 /* TopNewsScrollView.swift */; };
 		743212C22293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743212C12293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift */; };
 		743212C42293EEAA0076CCF3 /* NoticeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743212C32293EEAA0076CCF3 /* NoticeDetailViewController.swift */; };
+		7491167D229A416200FDF21E /* AnswerSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491167C229A416200FDF21E /* AnswerSearchViewController.swift */; };
+		7491167F229A45EB00FDF21E /* AnswerMyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7491167E229A45EB00FDF21E /* AnswerMyInfoViewController.swift */; };
 		74EB144222916D540091CCA0 /* AnswerExamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */; };
 		78B400E7219C6366006A8A45 /* AuditHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */; };
 		78FB9E65217AE69D001DE39A /* LFCollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */; };
@@ -484,6 +486,8 @@
 		742104F322913A5A00A23C83 /* TopNewsScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNewsScrollView.swift; sourceTree = "<group>"; };
 		743212C12293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerNoticeTableViewCell.swift; sourceTree = "<group>"; };
 		743212C32293EEAA0076CCF3 /* NoticeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeDetailViewController.swift; sourceTree = "<group>"; };
+		7491167C229A416200FDF21E /* AnswerSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerSearchViewController.swift; sourceTree = "<group>"; };
+		7491167E229A45EB00FDF21E /* AnswerMyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMyInfoViewController.swift; sourceTree = "<group>"; };
 		74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerExamTableViewCell.swift; sourceTree = "<group>"; };
 		78B400E6219C6366006A8A45 /* AuditHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditHomeViewController.swift; sourceTree = "<group>"; };
 		78FB9E64217AE69D001DE39A /* LFCollectionReusableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LFCollectionReusableHeaderView.swift; sourceTree = "<group>"; };
@@ -1060,6 +1064,8 @@
 				742104E9228FA9F800A23C83 /* ExamDetailViewController.swift */,
 				742104F1229138D500A23C83 /* AnswerViewController.swift */,
 				743212C32293EEAA0076CCF3 /* NoticeDetailViewController.swift */,
+				7491167C229A416200FDF21E /* AnswerSearchViewController.swift */,
+				7491167E229A45EB00FDF21E /* AnswerMyInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1977,6 +1983,7 @@
 				369D92092015D97A004BA1D0 /* WeekItemCell.swift in Sources */,
 				36449E8B1FA4BAD10036766B /* PartyMainViewController.swift in Sources */,
 				DD0B762A2158CBA6009A392C /* GPAStatModel.swift in Sources */,
+				7491167F229A45EB00FDF21E /* AnswerMyInfoViewController.swift in Sources */,
 				36449E841FA4BAD10036766B /* TwentyCourseScoreViewController.swift in Sources */,
 				36449E6D1FA4BABA0036766B /* FinalView.swift in Sources */,
 				742104E6228F1C8D00A23C83 /* ExamViewController.swift in Sources */,
@@ -2018,6 +2025,7 @@
 				3653DD911FBAD0B600501C3B /* ClassTableViewController.swift in Sources */,
 				78FB9E85217AEDB8001DE39A /* LFDetailViewController.swift in Sources */,
 				3614D57221D929FE0007B886 /* BookDetailViewController.swift in Sources */,
+				7491167D229A416200FDF21E /* AnswerSearchViewController.swift in Sources */,
 				36F285092049B7D50095A3D4 /* ModulesSettingsViewController.swift in Sources */,
 				DD2E302421C63600007767C3 /* WPYAnalyticsAOP.swift in Sources */,
 				A554C4BB1F99E64600022A01 /* BicycleFitnessTrackerViewCell.swift in Sources */,
