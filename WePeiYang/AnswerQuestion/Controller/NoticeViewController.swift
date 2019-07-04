@@ -39,5 +39,6 @@ extension NoticeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         UIViewController.current()!.navigationController?.pushViewController(NoticeDetailViewController(), animated: true)
+        noticeTableView.deselectRow(at: indexPath, animated: false)
     }
 }

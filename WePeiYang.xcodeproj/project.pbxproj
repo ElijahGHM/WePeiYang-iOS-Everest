@@ -246,7 +246,11 @@
 		B181B95A1EC5C21700B8198E /* FavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181B9571EC5C21700B8198E /* FavViewController.swift */; };
 		B181B95F1EC5C24000B8198E /* AllModulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B181B95D1EC5C24000B8198E /* AllModulesViewController.swift */; };
 		B19DABAA1E6EF5C2004A50B5 /* WePeiYangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19DABA91E6EF5C2004A50B5 /* WePeiYangUITests.swift */; };
+		CF2018AC22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2018AB22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift */; };
 		CF231425228FAC7500A31C49 /* TestViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */; };
+		CF91F8E522C9953300E77619 /* AnswerMyInfoTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91F8E422C9953300E77619 /* AnswerMyInfoTopView.swift */; };
+		CF91F8E722C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91F8E622C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift */; };
+		CFC89EA822CC39F80004DABF /* AnswerQuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC89EA722CC39F80004DABF /* AnswerQuestionAPI.swift */; };
 		DD0B75F32158C6ED009A392C /* YellowPageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B75DD2158C6ED009A392C /* YellowPageSearchViewController.swift */; };
 		DD0B75F42158C6ED009A392C /* YellowPageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B75DE2158C6ED009A392C /* YellowPageDetailViewController.swift */; };
 		DD0B75F52158C6ED009A392C /* YellowPageMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B75DF2158C6ED009A392C /* YellowPageMainViewController.swift */; };
@@ -572,7 +576,11 @@
 		B19DABA51E6EF5C2004A50B5 /* WePeiYangUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WePeiYangUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B19DABA91E6EF5C2004A50B5 /* WePeiYangUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WePeiYangUITests.swift; sourceTree = "<group>"; };
 		B19DABAB1E6EF5C2004A50B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2018AB22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMyInfotSectionView.swift; sourceTree = "<group>"; };
 		CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewTableViewCell.swift; sourceTree = "<group>"; };
+		CF91F8E422C9953300E77619 /* AnswerMyInfoTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMyInfoTopView.swift; sourceTree = "<group>"; };
+		CF91F8E622C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMyInfoTableViewCell.swift; sourceTree = "<group>"; };
+		CFC89EA722CC39F80004DABF /* AnswerQuestionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerQuestionAPI.swift; sourceTree = "<group>"; };
 		D77E7BD11F959EB50A5A0DED /* Pods-WePeiYangWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WePeiYangWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WePeiYangWidget/Pods-WePeiYangWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		DD0B75DD2158C6ED009A392C /* YellowPageSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowPageSearchViewController.swift; sourceTree = "<group>"; };
 		DD0B75DE2158C6ED009A392C /* YellowPageDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YellowPageDetailViewController.swift; sourceTree = "<group>"; };
@@ -1048,9 +1056,9 @@
 		742104DF228F0F0B00A23C83 /* AnswerQuestion */ = {
 			isa = PBXGroup;
 			children = (
+				CFC89EA622CC39D30004DABF /* Model */,
 				742104E0228F0F6600A23C83 /* Controller */,
 				742104E1228F0F6D00A23C83 /* View */,
-				742104E2228F0F7600A23C83 /* Model */,
 			);
 			path = AnswerQuestion;
 			sourceTree = "<group>";
@@ -1075,17 +1083,13 @@
 			children = (
 				743212C12293EE7F0076CCF3 /* AnswerNoticeTableViewCell.swift */,
 				742104F322913A5A00A23C83 /* TopNewsScrollView.swift */,
+				CF91F8E622C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift */,
 				74EB144122916D540091CCA0 /* AnswerExamTableViewCell.swift */,
+				CF91F8E422C9953300E77619 /* AnswerMyInfoTopView.swift */,
+				CF2018AB22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift */,
 				CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		742104E2228F0F7600A23C83 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		78FB9E62217AE66A001DE39A /* LostFound */ = {
@@ -1451,6 +1455,14 @@
 				B19DABAB1E6EF5C2004A50B5 /* Info.plist */,
 			);
 			path = WePeiYangUITests;
+			sourceTree = "<group>";
+		};
+		CFC89EA622CC39D30004DABF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CFC89EA722CC39F80004DABF /* AnswerQuestionAPI.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D33D5F603943FDFD415D167A /* Frameworks */ = {
@@ -1882,6 +1894,7 @@
 				DD2A2AC321B773B600EA6F8F /* AuditCacheManager.swift in Sources */,
 				36449E901FA4BAD10036766B /* GradeDetailViewController.swift in Sources */,
 				78FB9E7A217AEC0B001DE39A /* LostFoundAPI.swift in Sources */,
+				CF91F8E722C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift in Sources */,
 				36449E921FA4BAD10036766B /* AllQuizViewController.swift in Sources */,
 				36449E481FA4BA9B0036766B /* ApplicantTest.swift in Sources */,
 				361F8863204AF94200BCFA19 /* NewsTableViewCell.swift in Sources */,
@@ -2013,6 +2026,8 @@
 				36449E8C1FA4BAD10036766B /* PartyHandInViewController.swift in Sources */,
 				DD41A83D21A5341100886BB4 /* AuditSearchViewController.swift in Sources */,
 				78FB9E78217AEBE2001DE39A /* LFSearchCellOfHeight.swift in Sources */,
+				CF2018AC22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift in Sources */,
+				CF91F8E522C9953300E77619 /* AnswerMyInfoTopView.swift in Sources */,
 				364922A3202620CC00DFDC35 /* CardButton.swift in Sources */,
 				3644E1FC21D8DB09001F13F9 /* ExamCard.swift in Sources */,
 				DD0B76232158CBA6009A392C /* GPAViewController.swift in Sources */,
@@ -2056,6 +2071,7 @@
 				78FB9E9F217AEF79001DE39A /* ButtonGroups.swift in Sources */,
 				742104F422913A5A00A23C83 /* TopNewsScrollView.swift in Sources */,
 				A5E117B71F99DC9400C86CA2 /* NotificationList.swift in Sources */,
+				CFC89EA822CC39F80004DABF /* AnswerQuestionAPI.swift in Sources */,
 				362B055221CD52A000B370E7 /* ARKeyWindow.swift in Sources */,
 				3614D54A21D9251A0007B886 /* ExamTableViewCell.swift in Sources */,
 				B102541E1EC8547E0064373A /* TabVCTransitioningAnimator.swift in Sources */,

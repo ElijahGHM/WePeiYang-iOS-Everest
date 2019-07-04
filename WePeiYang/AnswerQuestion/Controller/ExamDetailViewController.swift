@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 class ExamDetailViewController: UIViewController {
     let myTableView = UITableView(frame: .zero, style: .plain)
     let footButton = UIButton(frame: CGRect(x: 44, y: 100, width: Device.width, height: 36))
@@ -26,7 +27,7 @@ class ExamDetailViewController: UIViewController {
         myTableView.frame = CGRect(x: 22, y: 0, width: Device.width - 44, height: 800)
         myTableView.dataSource = self
         myTableView.delegate = self
-        myTableView.isScrollEnabled = false
+        myTableView.isScrollEnabled = false // 不可滑动
         
         view.addSubview(myTableView)
     }
@@ -62,7 +63,7 @@ extension ExamDetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = TestViewTableViewCell()
-        cell.selectionStyle = UITableViewCell.SelectionStyle.none;
+        cell.selectionStyle = UITableViewCell.SelectionStyle.none//cell不可被点击
         cell.titleLable.text = tableViewCellTitles[indexPath.row]
         cell.Lable.text = tableViewCellContents[indexPath.row]
         
@@ -79,7 +80,5 @@ extension ExamDetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 36
     }
-    
-    
     
 }

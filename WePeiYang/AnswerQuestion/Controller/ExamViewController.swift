@@ -39,6 +39,7 @@ extension ExamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIViewController.current()!.navigationController?.pushViewController(ExamDetailViewController(), animated: true)
+        examTableView.deselectRow(at: indexPath, animated: false)
     }
 }
 extension UIViewController {

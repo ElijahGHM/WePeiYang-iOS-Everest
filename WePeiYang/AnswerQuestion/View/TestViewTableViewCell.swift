@@ -13,11 +13,14 @@ class TestViewTableViewCell: UITableViewCell {
     let titleLable = UILabel()
     let Lable = UILabel()
     let pointLable = UILabel()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
+    
     convenience init() {
         self.init(style: .default, reuseIdentifier: "TestViewTableViewCell")
+       
         titleLable.frame = CGRect(x: 20, y: 20, width: 150, height: 20)
         titleLable.textColor = .newBlue
         titleLable.text = "这是标题"

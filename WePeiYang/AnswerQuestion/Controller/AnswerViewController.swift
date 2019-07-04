@@ -7,6 +7,7 @@
 //
 // 理论答题主页
 import UIKit
+
 class AnswerViewController: UIViewController {
     var topNewsView: TopNewsScrollView?
     var mainScrollView: UIScrollView?
@@ -21,7 +22,6 @@ class AnswerViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController?.navigationBar.tintColor = UIColor.black
-        
     }
     
     override func viewDidLoad() {
