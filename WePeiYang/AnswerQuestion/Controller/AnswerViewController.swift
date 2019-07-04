@@ -22,6 +22,7 @@ class AnswerViewController: UIViewController {
         self.navigationController?.navigationBar.titleTextAttributes =
             [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.isTranslucent = false
     }
     
     override func viewDidLoad() {
@@ -36,9 +37,14 @@ class AnswerViewController: UIViewController {
     }
     // MARK: - 初始化主ScrollView
     func  setMainScrollView() {
-        let navigationHeight = self.navigationController?.navigationBar.frame.size.height
-        mainScrollView = UIScrollView(frame: CGRect(x: 0, y: 64, width: Device.width, height: Device.height))
+//        let navigationHeight = self.navigationController?.navigationBar.frame.size.height
+        mainScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: Device.width, height: Device.height))
         mainScrollView?.contentSize = CGSize(width: Device.width, height: Device.height*2)
+        if Int((mainScrollView?.contentOffset.y)!) <= 0 {
+            mainScrollView?.bounces = false
+        } else {
+            mainScrollView?.bounces = true
+        }
         mainScrollView?.backgroundColor = .gray
         view.addSubview(mainScrollView!)
     }
@@ -52,7 +58,7 @@ class AnswerViewController: UIViewController {
     }
     // MARK: - 初始化主内容(答题 通知)
     func setContentView() {
-        contentView = UIView(frame: CGRect(x: 0, y: 200, width: self.view.frame.width, height: Device.height-64))
+        contentView = UIView(frame: CGRect(x: 0, y: 200, width: self.view.frame.width, height: Device.height-200))
         contentView?.backgroundColor = .yellow
         
         pageController = WMPageController.init(viewControllerClasses: [ExamViewController.self, NoticeViewController.self], andTheirTitles: ["考试", "通知"])

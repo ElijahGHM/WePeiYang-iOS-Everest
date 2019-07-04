@@ -20,21 +20,30 @@ class TestViewTableViewCell: UITableViewCell {
     
     convenience init() {
         self.init(style: .default, reuseIdentifier: "TestViewTableViewCell")
-       
-        titleLable.frame = CGRect(x: 20, y: 20, width: 150, height: 20)
-        titleLable.textColor = .newBlue
-        titleLable.text = "这是标题"
-        contentView.addSubview(titleLable)
-        
-        pointLable.frame = CGRect(x: 0, y: 20, width: 20, height: 20)
+
+        contentView.addSubview(pointLable)
+        pointLable.snp.makeConstraints{ make in
+            make.top.equalTo(20)
+            make.left.equalTo(10)
+        }
         pointLable.textColor = .newBlue
         pointLable.text = "●"
-        contentView.addSubview(pointLable)
-
         
-        Lable.frame = CGRect(x: 20, y: 60, width: 300, height: 20)
-        Lable.text = "等待接口"
+        contentView.addSubview(titleLable)
+        titleLable.snp.makeConstraints{ make in
+            make.top.equalTo(20)
+            make.left.equalTo(pointLable.snp.right).offset(10)
+            make.height.equalTo(20)
+        }
+        titleLable.textColor = .newBlue
+        titleLable.text = "这是标题"
+        
         contentView.addSubview(Lable)
+        Lable.snp.makeConstraints{ make in
+            make.top.equalTo(titleLable.snp.bottom).offset(10)
+            make.left.equalTo(titleLable.snp.left)
+        }
+        Lable.text = "等待接口"
         
         }
     
