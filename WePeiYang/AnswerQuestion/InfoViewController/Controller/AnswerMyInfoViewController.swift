@@ -16,7 +16,8 @@ class AnswerMyInfoViewController: UIViewController {
         self.title = "个人页面"
         self.view.backgroundColor = .white
         view.backgroundColor = .white
-        
+        let backButton = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: #selector(click))
+        self.navigationItem.backBarButtonItem = backButton
         setTableView()
         
     }
@@ -38,6 +39,9 @@ class AnswerMyInfoViewController: UIViewController {
         
         view.addSubview(mytableView)
 
+    }
+    @objc func click(item: UIButton) {
+        navigationController?.pushViewController(AnswerViewController(), animated: true)
     }
     
 }

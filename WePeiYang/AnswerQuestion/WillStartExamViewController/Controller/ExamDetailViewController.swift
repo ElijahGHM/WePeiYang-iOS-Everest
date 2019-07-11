@@ -42,11 +42,15 @@ class ExamDetailViewController: UIViewController {
     }
     func sub(alert: UIAlertAction) {
         print("开始考试")
+        navigationController?.pushViewController(AnswerStartExamViewController(), animated: true)
     }
 }
 extension UIColor {
     static var newBlue: UIColor {
         return UIColor(red: 62/255, green: 129/255, blue: 228/255, alpha: 1.0)
+    }
+    static var backgroundBlue: UIColor {
+        return UIColor(red: 246/255, green: 248/255, blue: 254/255, alpha: 1.0)
     }
 }
 
