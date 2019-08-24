@@ -26,17 +26,9 @@ class AnswerSearchViewController: UIViewController {
             make.height.equalTo(30)
         }
         searchBar.placeholder = "请输入关键字"
-//        searchBar.barStyle = UISearchBar
         searchBar.delegate = self
     }
     
-    // - MARK: 设置导航栏
-//    func setUPNavigation() {
-//        self.title = "搜索结果"
-//        let btn = UIButton()
-//        var item = UIBarButtonItem()
-//        
-//    }
 }
 extension AnswerSearchViewController: UISearchBarDelegate {
     

@@ -7,6 +7,7 @@
 //
 // 理论答题主页
 import UIKit
+// 主界面
 
 class AnswerViewController: UIViewController {
     var topNewsView: TopNewsScrollView?
@@ -23,6 +24,8 @@ class AnswerViewController: UIViewController {
             [NSAttributedStringKey.foregroundColor: UIColor.black]
         self.navigationController?.navigationBar.tintColor = UIColor.black
         self.navigationController?.navigationBar.isTranslucent = false
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     override func viewDidLoad() {
@@ -46,6 +49,7 @@ class AnswerViewController: UIViewController {
             mainScrollView?.bounces = true
         }
         mainScrollView?.backgroundColor = .gray
+        mainScrollView?.delegate = self
         view.addSubview(mainScrollView!)
     }
     // MARK: - 初始化头部轮播图
@@ -110,5 +114,16 @@ class AnswerViewController: UIViewController {
     @objc func myInfButton(item: UIBarButtonItem) {
         let vc = AnswerMyInfoViewController()
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+extension AnswerViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 锁定滚动
+        if scrollView == self.mainScrollView {
+            let topNewsViewBottom = CGPoint(x: (topNewsView?.frame.minX)!, y: (topNewsView?.frame.maxY)!)
+            if scrollView.contentOffset.y >= topNewsViewBottom.y {
+                scrollView.contentOffset = topNewsViewBottom
+            }
+        }
     }
 }

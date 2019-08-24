@@ -17,103 +17,119 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
     let buttonB = UIButton()
     let buttonC = UIButton()
     let buttonD = UIButton()
+    let buttonE = UIButton()
+    let buttonF = UIButton()
     let labelA = UILabel()
     let labelB = UILabel()
     let labelC = UILabel()
     let labelD = UILabel()
+    let labelE = UILabel()
+    let labelF = UILabel()
     let padding = 20
+    var numOfQuestions = 4
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        let array = [numLabel, topicLabel, buttonA, buttonB, buttonC, buttonD, labelA, labelB, labelC, labelD]
+        let array = [numLabel, topicLabel, buttonA, buttonB, buttonC, buttonD, buttonE, buttonF, labelA, labelB, labelC, labelD, labelE, labelF]
         for index in 0..<array.count {
             contentView.addSubview(array[index])
         }
     }
-    convenience init() {
+    convenience init(paper: ExamPaper, index: Int) {
         self.init(style: .default, reuseIdentifier: "ExamDetailTableViewCell")
         let paddingA = 40 //选项之间的空隙
         let paddingB = 15 //button 与 label 之间的空隙
         let length = 25 //button 的边长
+        let buttonArr = [buttonA, buttonB, buttonC, buttonD, buttonE, buttonF]
+        let labelArr = [labelA, labelB, labelC, labelD, labelE, labelF]
+        let questionArr = [paper.body?[index].objA, paper.body?[index].objB, paper.body?[index].objC, paper.body?[index].objD, paper.body?[index].objE, paper.body?[index].objF]
+
+        if paper.body?[index].objD == Optional("")  {
+            numOfQuestions = 3
+            print("选项为三个")
+        } else if paper.body?[index].objE == Optional("") {
+            numOfQuestions = 4
+            print("选项为四个")
+        } else if paper.body?[index].objF == Optional("") {
+            numOfQuestions = 5
+            print("选项为五个")
+        }
         numLabel.snp.makeConstraints{ make in
             make.top.equalTo(padding)
             make.left.equalTo(padding)
+            make.width.equalTo(length + 5)
+            make.height.equalTo(length)
         }
+        numLabel.text = "\(index + 1)"
         
         topicLabel.snp.makeConstraints{ make in
             make.top.equalTo(numLabel.snp.top)
             make.left.equalTo(numLabel.snp.right).offset(5)
+            make.right.equalTo(-padding)
         }
-        topicLabel.text = "这是题目(多选)"
-        
-        buttonA.snp.makeConstraints{ make in
-            make.top.equalTo(numLabel.snp.bottom).offset(paddingA)
-            make.left.equalTo(numLabel.snp.left)
-            make.height.equalTo(length)
-            make.width.equalTo(length)
+        topicLabel.text = paper.body?[index].question
+        topicLabel.numberOfLines = 0
+        topicLabel.adjustsFontSizeToFitWidth = true
+        topicLabel.font = numLabel.font
+        for i in 0 ..< numOfQuestions {
+            buttonArr[i].snp.makeConstraints{ make in
+                make.top.equalTo(labelArr[i].snp.top)
+                make.left.equalTo(numLabel.snp.left)
+                make.height.equalTo(length)
+                make.width.equalTo(length)
+            }
+            buttonArr[i].setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
+            if (paper.body?[index].type)!.rawValue == "sc" {
+                buttonArr[i].addTarget(self, action: #selector(radio), for: .touchUpInside)
+            } else {
+                buttonArr[i].addTarget(self, action: #selector(multiple), for: .touchUpInside)
+            }
+            labelArr[i].snp.makeConstraints{ make in
+                if i == 0 {
+                    make.top.equalTo(topicLabel.snp.bottom).offset(paddingA)
+                } else {
+                    make.top.equalTo(labelArr[i - 1].snp.bottom).offset(paddingA)
+                }
+                if i == numOfQuestions - 1 {
+                    make.bottom.equalToSuperview().offset(-padding)
+                }
+                make.left.equalTo(buttonArr[i].snp.right).offset(paddingB)
+                make.right.equalTo(-padding)
+            }
+            labelArr[i].numberOfLines = 0
+            labelArr[i].adjustsFontSizeToFitWidth = true
+            labelArr[i].text = questionArr[i]
         }
-        buttonA.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
-        buttonA.addTarget(self, action: #selector(selected), for: .touchUpInside)
-        
-        labelA.snp.makeConstraints{ make in
-            make.top.equalTo(buttonA.snp.top)
-            make.left.equalTo(buttonA.snp.right).offset(paddingB)
-        }
-        labelA.text = "题目 A"
-        
-        buttonB.snp.makeConstraints{ make in
-            make.top.equalTo(buttonA.snp.bottom).offset(paddingA)
-            make.left.equalTo(buttonA.snp.left)
-            make.height.equalTo(length)
-            make.width.equalTo(length)
-            
-        }
-        buttonB.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
-        buttonB.addTarget(self, action: #selector(selected), for: .touchUpInside)
-        
-        
-        labelB.snp.makeConstraints{ make in
-            make.top.equalTo(buttonB.snp.top)
-            make.left.equalTo(buttonB.snp.right).offset(paddingB)
-        }
-        labelB.text = "题目 B"
-        
-        buttonC.snp.makeConstraints{ make in
-            make.top.equalTo(buttonB.snp.bottom).offset(paddingA)
-            make.left.equalTo(buttonB.snp.left)
-            make.height.equalTo(length)
-            make.width.equalTo(length)
-            
-        }
-        buttonC.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
-        buttonC.addTarget(self, action: #selector(selected), for: .touchUpInside)
-        
-        
-        labelC.snp.makeConstraints{ make in
-            make.top.equalTo(buttonC.snp.top)
-            make.left.equalTo(buttonC.snp.right).offset(paddingB)
-        }
-        labelC.text = "题目 C"
-        
-        buttonD.snp.makeConstraints{ make in
-            make.top.equalTo(buttonC.snp.bottom).offset(paddingA)
-            make.left.equalTo(buttonC.snp.left)
-            make.height.equalTo(length)
-            make.width.equalTo(length)
-            
-        }
-        buttonD.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
-        buttonD.addTarget(self, action: #selector(selected), for: .touchUpInside)
-        
-        
-        labelD.snp.makeConstraints{ make in
-            make.top.equalTo(buttonD.snp.top)
-            make.left.equalTo(buttonD.snp.right).offset(paddingB)
-        }
-        labelD.text = "题目 D"
-        
+
+
     }
-    @objc func selected(button: UIButton) {
+    @objc func radio(button: UIButton) {
+        switch button {
+        case self.buttonA:
+            buttonA.setImage(#imageLiteral(resourceName: "like"), for: .normal)
+            buttonB.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonC.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonD.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+        case self.buttonB:
+            buttonB.setImage(#imageLiteral(resourceName: "like"), for: .normal)
+            buttonA.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonC.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonD.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+        case self.buttonC:
+            buttonC.setImage(#imageLiteral(resourceName: "like"), for: .normal)
+            buttonA.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonB.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonD.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+        case self.buttonD:
+            buttonD.setImage(#imageLiteral(resourceName: "like"), for: .normal)
+            buttonA.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonB.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            buttonC.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+        default:
+            break
+        }
+    }
+    @objc func multiple(button: UIButton) {
         switch button {
         case self.buttonA:
             self.buttonA.setImage(#imageLiteral(resourceName: "like"), for: .normal)
@@ -127,8 +143,6 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
         case self.buttonD:
             self.buttonD.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             self.buttonD.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
-            self.buttonD.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
-            
         default:
             break
         }
@@ -137,17 +151,16 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
         switch button {
         case self.buttonA:
             self.buttonA.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
-            self.buttonA.addTarget(self, action: #selector(self.selected), for: .touchUpInside)
+            self.buttonA.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
         case self.buttonB:
             self.buttonB.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
-            self.buttonB.addTarget(self, action: #selector(self.selected), for: .touchUpInside)
+            self.buttonB.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
         case self.buttonC:
             self.buttonC.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
-            self.buttonC.addTarget(self, action: #selector(self.selected), for: .touchUpInside)
+            self.buttonC.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
         case self.buttonD:
             self.buttonD.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
-            self.buttonD.addTarget(self, action: #selector(self.selected), for: .touchUpInside)
-            
+            self.buttonD.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
         default:
             break
         }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+// 考试详情界面
 
 class ExamDetailViewController: UIViewController {
     let myTableView = UITableView(frame: .zero, style: .plain)
@@ -16,6 +17,7 @@ class ExamDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "考试详情"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.view.backgroundColor = .white
         footButton.backgroundColor = .newBlue
         footButton.setTitle("开始考试", for: .normal)

@@ -28,7 +28,7 @@ class AnswerMyInfoTableViewCell: UITableViewCell {
         self.init(style: .default, reuseIdentifier: "AnswerMyInfoTableViewCell")
 
         
-        let padding: CGFloat = 20
+        let padding: CGFloat = 10
         
 //        biKaoLable.frame = CGRect(x: padding, y: padding, width: Device.width/11, height: 20)
         biKaoLable.snp.makeConstraints{ make in
@@ -96,6 +96,7 @@ class AnswerMyInfoTableViewCell: UITableViewCell {
         gradeLabel.snp.makeConstraints{ make in
             make.top.equalTo(gradeHeadLabel).offset(25)
             make.centerX.equalTo(gradeHeadLabel).offset(gradeHeadLabel.center.x)
+            make.left.equalTo(titleLable.snp.right).offset(10)
         }
         gradeLabel.text = "98"
         gradeLabel.font = UIFont.systemFont(ofSize:28)

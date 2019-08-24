@@ -9,19 +9,28 @@
 import Foundation
 import UIKit
 import SnapKit
+// 考试界面
 
 class AnswerStartExamViewController: UIViewController {
     let examTableView = UITableView(frame: .zero, style: .grouped)
     let bottomButton = UIButton()
     let footButton = UIButton()
     let popView = UIView()
+    let cardView = ExamCardCollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+    var exampaper: ExamPaper!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        getPaperHelper.getpaper(success: { paper in
+            self.exampaper = paper
+            self.setUpTableView()
+            self.setUpNavigation()
+            self.setUpButtons()
+        }, failure: { _ in
+        })
         view.backgroundColor = .white
-        setUpTableView()
-        setUpNavigation()
-        setUpButtons()
-    }
+        }
+    
     // - MARK: 设置 tableview 属性
     func setUpTableView() {
         view.addSubview(examTableView)
@@ -31,22 +40,35 @@ class AnswerStartExamViewController: UIViewController {
         examTableView.bounces = false
         examTableView.showsVerticalScrollIndicator = false
         examTableView.showsHorizontalScrollIndicator = false
-//        examTableView.isPagingEnabled = true
-        
+        examTableView.estimatedRowHeight = 300.0 // 估算 cell 的初始高度
+        examTableView.rowHeight = UITableViewAutomaticDimension // 使 cell 自动调整高度
         examTableView.snp.makeConstraints{ make in
             make.top.equalTo(-36)
             make.bottom.equalTo(-50)
             make.left.equalTo(20)
             make.right.equalTo(-20)
         }
+        cardView.frame = CGRect(x: 0, y: Device.height + 30, width: Device.width, height: Device.height * 0.45)
+        view.addSubview(cardView)
     }
     // - MARK: 设置 navigation 属性
     func setUpNavigation() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "提交", style: .plain, target: self, action: #selector(tijiao))
         self.navigationController?.navigationBar.isTranslucent = false
+        let item = UIBarButtonItem(title: "", style: .done, target: self, action: #selector(click))
+        self.navigationItem.backBarButtonItem = item
 
     }
     // - MARK: 设置 button 功能
+    @objc func click(item: UIButton) {
+        if let vcs = navigationController?.viewControllers {
+            if (vcs.count - 3) >= 0 {
+                navigationController?.popToViewController(vcs[vcs.count - 4], animated: true)
+            } else {
+                navigationController?.popToViewController(vcs[vcs.count - 2], animated: true)
+            }
+        }
+    }
     @objc func tijiao(item: UIButton) {
         let alert = UIAlertController(title: "提示", message: "你将结束考试", preferredStyle: .alert)
         
@@ -57,26 +79,26 @@ class AnswerStartExamViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     @objc func pop(item: UIButton) {
-        let window = UIApplication.shared.keyWindow
-        popView.frame = window!.bounds
-        popView.backgroundColor = UIColor(white: 1 , alpha: 0.1)
-        window?.addSubview(popView)
+        bottomButton.setImage(#imageLiteral(resourceName: "ic_arrow_down"), for: .normal)
+        bottomButton.addTarget(self, action: #selector(chehui), for: .touchUpInside)
         
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(chehui))
-        popView.addGestureRecognizer(gesture)
+        UIView.animate(withDuration: 0.5) {
+            self.cardView.frame = CGRect(x: 0, y: 0.55 * deviceHeight - 50, width: deviceWidth, height: 0.45 * deviceHeight)
+            print("动画效果")
+
+        }
     }
     func sub(alert: UIAlertAction) {
-//        print("开始考试")
         navigationController?.pushViewController(AnswerMyInfoViewController(), animated: true)
     }
     @objc func chehui(item: UIButton) {
         UIView.animate(withDuration: 0.3) {
-            self.popView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 0.55)
-            DispatchQueue.main.asyncAfter(deadline: .now()) {
-                self.popView.removeFromSuperview()
-                
-            }
+            // 尾随闭包播放弹出动画
+            self.cardView.frame = CGRect(x: 0, y: deviceHeight + 30, width: deviceWidth, height: 0.45 * deviceHeight)
+            
         }
+        bottomButton.setImage(#imageLiteral(resourceName: "ic_arrow_up"), for: .normal)
+        bottomButton.addTarget(self, action: #selector(pop), for: .touchUpInside)
     }
     // - MARK: 设置底端 button 功能
     func setUpButtons() {
@@ -93,36 +115,23 @@ class AnswerStartExamViewController: UIViewController {
         bottomButton.setImage(#imageLiteral(resourceName: "ic_arrow_up"), for: .normal)
         bottomButton.addTarget(self, action: #selector(pop), for: .touchUpInside)
         
+        
     }
 }
 extension AnswerStartExamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return (exampaper.body?.count)!
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if (indexPath[1] == 0) {
-            let cell = ExamDetailTableViewSingleCell()
-            cell.selectionStyle = .none
-            cell.backgroundColor = .backgroundBlue
-            cell.numLabel.text = "\(indexPath[1] + 1). "
-            return cell
-        } else {
-            let cell = ExamDetailTableViewMultipleCell()
-            cell.selectionStyle = .none
-            cell.backgroundColor = .backgroundBlue
-            cell.numLabel.text = "\(indexPath[1] + 1). "
-            return cell
-
-        }
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return examTableView.height / 2
+        let cell = ExamDetailTableViewMultipleCell(paper: exampaper, index: indexPath.row)
+        cell.selectionStyle = .none
+        cell.backgroundColor = .backgroundBlue
+        return cell
+        
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 100
     }
-    
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footView = UIView()
         footView.backgroundColor = .white

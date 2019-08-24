@@ -31,7 +31,7 @@ class AnswerMyInfoSectionView: UIView {
         
 //        myLabel.frame = CGRect(x: 45, y: 10, width: 150, height: 30)
         myLabel.snp.makeConstraints{ make in
-            make.left.equalTo(myImage).offset(35)
+            make.left.equalTo(myImage.snp.right).offset(15)
             make.top.equalTo(10)
             make.bottom.equalTo(-10)
             

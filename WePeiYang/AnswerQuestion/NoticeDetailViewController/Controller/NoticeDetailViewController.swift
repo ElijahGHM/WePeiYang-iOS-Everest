@@ -7,6 +7,8 @@
 //
 
 import UIKit
+// 通知界面
+
 class NoticeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
