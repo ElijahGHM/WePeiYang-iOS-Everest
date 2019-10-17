@@ -21,7 +21,7 @@ class AnswerExamTableViewCell: UITableViewCell {
         }
     }
     
-    convenience init(index: Int) {
+    convenience init(mytests: MyTests,index: Int) {
         self.init(style: .default, reuseIdentifier: "ExamTableViewCell")
         
         let padding: CGFloat = 20
@@ -61,7 +61,7 @@ class AnswerExamTableViewCell: UITableViewCell {
             make.left.equalTo(biKaoLable.snp.right).offset(6)
             make.height.equalTo(26)
         }
-        titleLable.text = "形势与政策第三十七期 "
+        titleLable.text = mytests.data?[index].name
         titleLable.font = UIFont.systemFont(ofSize: 18)
         titleLable.textAlignment = .left
         titleLable.textColor = .black
@@ -71,7 +71,7 @@ class AnswerExamTableViewCell: UITableViewCell {
             make.left.equalTo(jinXingLable.snp.right).offset(6)
             make.height.equalTo(26)
         }
-        timeLable.text = "2019.04.29 - 2019.05.01"
+        timeLable.text = "\(mytests.data?[index].createdAt) - \(mytests.data?[index].endedTime)"
         timeLable.font = UIFont.systemFont(ofSize: 14)
         timeLable.textAlignment = .left
         timeLable.textColor = .gray

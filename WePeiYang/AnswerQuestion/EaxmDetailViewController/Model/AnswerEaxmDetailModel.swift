@@ -11,7 +11,7 @@ import Foundation
 // MARK: - ExamPaper
 struct ExamPaper: Codable {
     let head: Head?
-    let body: [Body]?
+    var body: [Body]?
 }
 
 // MARK: ExamPaper convenience initializers and mutators
@@ -58,6 +58,7 @@ struct Body: Codable {
     let objD: String?
     let type: TypeEnum?
     let objE, objF: String?
+    var isDone: Bool?
 }
 
 // MARK: Body convenience initializers and mutators
@@ -87,7 +88,8 @@ extension Body {
         objD: String?? = nil,
         type: TypeEnum?? = nil,
         objE: String?? = nil,
-        objF: String?? = nil
+        objF: String?? = nil,
+        isDone: Bool?? = false
         ) -> Body {
         return Body(
             id: id ?? self.id,
@@ -98,7 +100,8 @@ extension Body {
             objD: objD ?? self.objD,
             type: type ?? self.type,
             objE: objE ?? self.objE,
-            objF: objF ?? self.objF
+            objF: objF ?? self.objF,
+            isDone: isDone ?? self.isDone
         )
     }
     
@@ -189,7 +192,9 @@ extension Head {
     }
 }
 
-
+struct testInfo {
+    static var id = 0
+}
 
 
 

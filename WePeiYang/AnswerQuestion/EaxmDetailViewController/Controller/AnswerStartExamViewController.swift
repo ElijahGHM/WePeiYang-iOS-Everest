@@ -12,15 +12,18 @@ import SnapKit
 // 考试界面
 
 class AnswerStartExamViewController: UIViewController {
-    let examTableView = UITableView(frame: .zero, style: .grouped)
+    lazy var examTableView = UITableView(frame: .zero, style: .grouped)
     let bottomButton = UIButton()
     let footButton = UIButton()
     let popView = UIView()
     let cardView = ExamCardCollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
     var exampaper: ExamPaper!
-
+    static var Answer_isDone = Array(repeating: false, count: 70)
+    static var Answer_answerlist = Array(repeating: "", count: 70)
+    static var Answer_index = 0
     override func viewDidLoad() {
         super.viewDidLoad()
+        cardView.delegate = self
         getPaperHelper.getpaper(success: { paper in
             self.exampaper = paper
             self.setUpTableView()
@@ -84,7 +87,6 @@ class AnswerStartExamViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5) {
             self.cardView.frame = CGRect(x: 0, y: 0.55 * deviceHeight - 50, width: deviceWidth, height: 0.45 * deviceHeight)
-            print("动画效果")
 
         }
     }
@@ -92,7 +94,7 @@ class AnswerStartExamViewController: UIViewController {
         navigationController?.pushViewController(AnswerMyInfoViewController(), animated: true)
     }
     @objc func chehui(item: UIButton) {
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             // 尾随闭包播放弹出动画
             self.cardView.frame = CGRect(x: 0, y: deviceHeight + 30, width: deviceWidth, height: 0.45 * deviceHeight)
             
@@ -114,11 +116,13 @@ class AnswerStartExamViewController: UIViewController {
         bottomButton.backgroundColor = .white
         bottomButton.setImage(#imageLiteral(resourceName: "ic_arrow_up"), for: .normal)
         bottomButton.addTarget(self, action: #selector(pop), for: .touchUpInside)
-        
-        
     }
+
 }
 extension AnswerStartExamViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        AnswerStartExamViewController.Answer_index = indexPath.row
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (exampaper.body?.count)!
     }
@@ -127,7 +131,6 @@ extension AnswerStartExamViewController: UITableViewDelegate, UITableViewDataSou
         cell.selectionStyle = .none
         cell.backgroundColor = .backgroundBlue
         return cell
-        
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 100
@@ -147,5 +150,10 @@ extension AnswerStartExamViewController: UITableViewDelegate, UITableViewDataSou
         footButton.layer.cornerRadius = 4
         footButton.addTarget(self, action: #selector(tijiao), for: .touchUpInside)
         return footView
+    }
+}
+extension AnswerStartExamViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        examTableView.scrollToRow(at: IndexPath(row:indexPath.item, section: 0), at: .middle, animated: true)
     }
 }

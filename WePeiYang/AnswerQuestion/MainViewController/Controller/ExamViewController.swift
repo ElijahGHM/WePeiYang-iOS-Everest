@@ -12,10 +12,15 @@ import UIKit
 class ExamViewController: UIViewController {
     
     var examTableView: UITableView!
+    var mytests: MyTests!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTableView()
+        getPaperHelper.getTests(success: { tests in
+            self.mytests = tests
+            self.setTableView()
+        }, failure: { _ in
+        })
         
     }
     // 设置tableView
@@ -29,11 +34,11 @@ class ExamViewController: UIViewController {
 }
 extension ExamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return (mytests.data?.count)!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return AnswerExamTableViewCell(index: indexPath.row)
+        return AnswerExamTableViewCell(mytests: mytests, index: indexPath.row)
       //  return RecruitmentInfoTableViewCell(recruitmentInfo: recruitmentInfo, index: indexPath.row, isSearch: false)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -42,6 +47,8 @@ extension ExamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         UIViewController.current()!.navigationController?.pushViewController(ExamDetailViewController(), animated: true)
         examTableView.deselectRow(at: indexPath, animated: false)
+        testInfo.id = (mytests.data?[indexPath.row].id)!
+        print(testInfo.id)
     }
 }
 extension UIViewController {

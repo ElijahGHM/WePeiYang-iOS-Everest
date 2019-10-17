@@ -46,21 +46,21 @@ class ExamCardCollectionView: UICollectionView, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let selectedBlue = UIColor(red: 228/255, green: 243/255, blue: 1, alpha: 1)
-        let selectedRed = UIColor(red: 1, green: 228/255, blue: 243/255, alpha: 1)
-        
+    
         let cell = self.dequeueReusableCell(withReuseIdentifier: "quesCollection cell", for: indexPath) as! ExamCardCollectionViewCell
+        if (AnswerStartExamViewController.Answer_isDone[indexPath.item] == true) {
+            cell.backgroundColor = .newBlue
+            cell.label.textColor = .white
+        } else {
+            cell.label.textColor = .newBlue
+        }
         cell.label.text = "\(indexPath.item + 1)"
         cell.layer.cornerRadius = cellW * 0.5
         cell.layer.borderColor = UIColor.newBlue.cgColor
-        cell.label.textColor = .newBlue
         return cell
     }
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
-    }
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -13,6 +13,7 @@ import SceneKit
 
 @available(iOS 11.0, *)
 class ARKeyWindow: UIWindow {
+    let myView = UIView()
 
     override init(frame: CGRect) {
         super.init(frame: frame)

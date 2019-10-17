@@ -10,11 +10,13 @@ import UIKit
 // 考试详情界面
 
 class ExamDetailViewController: UIViewController {
+    var exampaper: ExamPaper!
     let myTableView = UITableView(frame: .zero, style: .plain)
     let footButton = UIButton(frame: CGRect(x: 44, y: 100, width: Device.width, height: 36))
-    let tableViewCellTitles  = ["考试名称", "考试时间", "历史最高分", "通过状态", "有效成绩次数", "剩余考试次数"]
+    var tableViewCellTitles  = ["考试名称", "考试时间", "历史最高分", "通过状态", "有效成绩次数", "剩余考试次数"]
     let tableViewCellContents = ["形势与政策第三十七期", "201904..29-2019.05.05", "59", "未通过", "0次", "10次"]
     override func viewDidLoad() {
+//        tableViewCellTitles  = [exampaper.head?.name, "\(exampaper.head?.startedAt)-\(exampaper.head?.endedTime)", "历史最高分", "通过状态", "有效成绩次数", "\(10 - Int(exampaper.head?.))"] as! [String]
         super.viewDidLoad()
         self.navigationItem.title = "考试详情"
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)

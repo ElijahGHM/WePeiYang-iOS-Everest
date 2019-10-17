@@ -248,6 +248,7 @@
 		B19DABAA1E6EF5C2004A50B5 /* WePeiYangUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19DABA91E6EF5C2004A50B5 /* WePeiYangUITests.swift */; };
 		CF2018AC22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2018AB22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift */; };
 		CF231425228FAC7500A31C49 /* TestViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */; };
+		CF2EE0812320ECF400BBDA01 /* AnswerQuestionMyTestsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2EE0802320ECF400BBDA01 /* AnswerQuestionMyTestsModel.swift */; };
 		CF91F8E522C9953300E77619 /* AnswerMyInfoTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91F8E422C9953300E77619 /* AnswerMyInfoTopView.swift */; };
 		CF91F8E722C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF91F8E622C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift */; };
 		CFD27D56230A191D00751238 /* ExamCardCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD27D55230A191D00751238 /* ExamCardCollectionView.swift */; };
@@ -255,7 +256,6 @@
 		CFD27D5A230B654600751238 /* AnswerSearchHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD27D59230B654600751238 /* AnswerSearchHeadView.swift */; };
 		CFD27D5C230B836C00751238 /* AnswerEaxmDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD27D5B230B836C00751238 /* AnswerEaxmDetailModel.swift */; };
 		CFD27D5E230B85DE00751238 /* AnswerQuestionAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD27D5D230B85DE00751238 /* AnswerQuestionAPI.swift */; };
-		CFD8171C22D31684002D1BAD /* ExamDetailCollectionVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFD8171B22D31684002D1BAD /* ExamDetailCollectionVIew.swift */; };
 		CFE991A922D4248100034D4C /* AnswerStartExamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE991A822D4248100034D4C /* AnswerStartExamViewController.swift */; };
 		CFE991AD22D4AB8F00034D4C /* ExamDetailTableViewMultipleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE991AC22D4AB8F00034D4C /* ExamDetailTableViewMultipleCell.swift */; };
 		DD0B75F32158C6ED009A392C /* YellowPageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD0B75DD2158C6ED009A392C /* YellowPageSearchViewController.swift */; };
@@ -585,6 +585,7 @@
 		B19DABAB1E6EF5C2004A50B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF2018AB22C9FB1B002833D9 /* AnswerMyInfotSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMyInfotSectionView.swift; sourceTree = "<group>"; };
 		CF231424228FAC7500A31C49 /* TestViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewTableViewCell.swift; sourceTree = "<group>"; };
+		CF2EE0802320ECF400BBDA01 /* AnswerQuestionMyTestsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerQuestionMyTestsModel.swift; sourceTree = "<group>"; };
 		CF91F8E422C9953300E77619 /* AnswerMyInfoTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMyInfoTopView.swift; sourceTree = "<group>"; };
 		CF91F8E622C9AE3600E77619 /* AnswerMyInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerMyInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CFD27D55230A191D00751238 /* ExamCardCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamCardCollectionView.swift; sourceTree = "<group>"; };
@@ -592,7 +593,6 @@
 		CFD27D59230B654600751238 /* AnswerSearchHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerSearchHeadView.swift; sourceTree = "<group>"; };
 		CFD27D5B230B836C00751238 /* AnswerEaxmDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerEaxmDetailModel.swift; sourceTree = "<group>"; };
 		CFD27D5D230B85DE00751238 /* AnswerQuestionAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerQuestionAPI.swift; sourceTree = "<group>"; };
-		CFD8171B22D31684002D1BAD /* ExamDetailCollectionVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDetailCollectionVIew.swift; sourceTree = "<group>"; };
 		CFE991A822D4248100034D4C /* AnswerStartExamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerStartExamViewController.swift; sourceTree = "<group>"; };
 		CFE991AC22D4AB8F00034D4C /* ExamDetailTableViewMultipleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamDetailTableViewMultipleCell.swift; sourceTree = "<group>"; };
 		D77E7BD11F959EB50A5A0DED /* Pods-WePeiYangWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WePeiYangWidget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WePeiYangWidget/Pods-WePeiYangWidget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -1458,6 +1458,7 @@
 		CF413C0A22D6D4F20054A1BB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				CF2EE0802320ECF400BBDA01 /* AnswerQuestionMyTestsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1637,7 +1638,6 @@
 		CF413C1F22D6D7960054A1BB /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CFD8171B22D31684002D1BAD /* ExamDetailCollectionVIew.swift */,
 				CFD27D55230A191D00751238 /* ExamCardCollectionView.swift */,
 				CFD27D57230A1A6100751238 /* ExamCardCollectionViewCell.swift */,
 				CFE991AC22D4AB8F00034D4C /* ExamDetailTableViewMultipleCell.swift */,
@@ -1853,6 +1853,7 @@
 					};
 					B19DAB851E6EF5C2004A50B5 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 444Z35JR9B;
 						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2183,7 +2184,6 @@
 				78FB9E8B217AEE4C001DE39A /* LFWaterFlowViewLayout.swift in Sources */,
 				36449E621FA4BABA0036766B /* SignUpTableViewCell.swift in Sources */,
 				369D92092015D97A004BA1D0 /* WeekItemCell.swift in Sources */,
-				CFD8171C22D31684002D1BAD /* ExamDetailCollectionVIew.swift in Sources */,
 				36449E8B1FA4BAD10036766B /* PartyMainViewController.swift in Sources */,
 				DD0B762A2158CBA6009A392C /* GPAStatModel.swift in Sources */,
 				7491167F229A45EB00FDF21E /* AnswerMyInfoViewController.swift in Sources */,
@@ -2296,6 +2296,7 @@
 				36CAD44C201B9194006F85E3 /* ClassTableCard.swift in Sources */,
 				DD41A83321A4704000886BB4 /* AuditDetailCourseModel.swift in Sources */,
 				B10253F01EC84ED90064373A /* AccountManager.swift in Sources */,
+				CF2EE0812320ECF400BBDA01 /* AnswerQuestionMyTestsModel.swift in Sources */,
 				78FB9E91217AEEAA001DE39A /* LostFoundSearchViewController.swift in Sources */,
 				78FB9E89217AEE32001DE39A /* LFSearchedResultViewController.swift in Sources */,
 				CFD27D5E230B85DE00751238 /* AnswerQuestionAPI.swift in Sources */,
@@ -2540,7 +2541,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 201812081129;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 444Z35JR9B;
 				INFOPLIST_FILE = WePeiYang/main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2568,7 +2569,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 201812081129;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 444Z35JR9B;
 				INFOPLIST_FILE = WePeiYang/main/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

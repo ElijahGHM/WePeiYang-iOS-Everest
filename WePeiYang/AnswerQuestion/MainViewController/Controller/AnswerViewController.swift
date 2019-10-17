@@ -14,7 +14,6 @@ class AnswerViewController: UIViewController {
     var mainScrollView: UIScrollView?
     var contentView: UIView?
     var pageController: WMPageController?
-    
     // MARK: - 导航栏设置
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -32,7 +31,6 @@ class AnswerViewController: UIViewController {
         super.viewDidLoad()
         self.title = "理论答题"
         self.view.backgroundColor = .white
-        
         setMainScrollView()
         setTopNewsScrollView()
         setContentView()

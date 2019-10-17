@@ -27,6 +27,8 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
     let labelF = UILabel()
     let padding = 20
     var numOfQuestions = 4
+    var chosenArray = Array(repeating: false, count: 6)
+    static var idx = 0
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -46,13 +48,10 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
 
         if paper.body?[index].objD == Optional("")  {
             numOfQuestions = 3
-            print("选项为三个")
         } else if paper.body?[index].objE == Optional("") {
             numOfQuestions = 4
-            print("选项为四个")
         } else if paper.body?[index].objF == Optional("") {
             numOfQuestions = 5
-            print("选项为五个")
         }
         numLabel.snp.makeConstraints{ make in
             make.top.equalTo(padding)
@@ -99,9 +98,18 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
             labelArr[i].numberOfLines = 0
             labelArr[i].adjustsFontSizeToFitWidth = true
             labelArr[i].text = questionArr[i]
+            if AnswerStartExamViewController.Answer_isDone[index] == true {
+                if AnswerStartExamViewController.Answer_answerlist[ExamDetailTableViewMultipleCell.idx] == "A" {
+                    buttonArr[0].setImage(#imageLiteral(resourceName: "like"), for: .normal)
+                } else if AnswerStartExamViewController.Answer_answerlist[ExamDetailTableViewMultipleCell.idx] == "B" {
+                    buttonArr[1].setImage(#imageLiteral(resourceName: "like"), for: .normal)
+                } else if AnswerStartExamViewController.Answer_answerlist[ExamDetailTableViewMultipleCell.idx] == "C" {
+                    buttonArr[2].setImage(#imageLiteral(resourceName: "like"), for: .normal)
+                } else if AnswerStartExamViewController.Answer_answerlist[ExamDetailTableViewMultipleCell.idx] == "D" {
+                    buttonArr[3].setImage(#imageLiteral(resourceName: "like"), for: .normal)
+                }
+            }
         }
-
-
     }
     @objc func radio(button: UIButton) {
         switch button {
@@ -110,21 +118,33 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
             buttonB.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonC.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonD.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            AnswerStartExamViewController.Answer_answerlist[AnswerStartExamViewController.Answer_index] = "A"
+            AnswerStartExamViewController.Answer_isDone[AnswerStartExamViewController.Answer_index] = true
+            print(AnswerStartExamViewController.Answer_answerlist)
         case self.buttonB:
             buttonB.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             buttonA.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonC.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonD.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            AnswerStartExamViewController.Answer_answerlist[AnswerStartExamViewController.Answer_index] = "B"
+            AnswerStartExamViewController.Answer_isDone[AnswerStartExamViewController.Answer_index] = true
+            print(AnswerStartExamViewController.Answer_answerlist)
         case self.buttonC:
             buttonC.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             buttonA.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonB.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonD.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            AnswerStartExamViewController.Answer_answerlist[AnswerStartExamViewController.Answer_index] = "C"
+            AnswerStartExamViewController.Answer_isDone[AnswerStartExamViewController.Answer_index] = true
+            print(AnswerStartExamViewController.Answer_answerlist)
         case self.buttonD:
             buttonD.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             buttonA.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonB.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
             buttonC.setImage(#imageLiteral(resourceName: "grey_star"), for: .normal)
+            AnswerStartExamViewController.Answer_answerlist[AnswerStartExamViewController.Answer_index] = "D"
+            AnswerStartExamViewController.Answer_isDone[AnswerStartExamViewController.Answer_index] = true
+            print(AnswerStartExamViewController.Answer_answerlist)
         default:
             break
         }
@@ -134,15 +154,27 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
         case self.buttonA:
             self.buttonA.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             self.buttonA.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
+            chosenArray[0] = true
         case self.buttonB:
             self.buttonB.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             self.buttonB.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
+            chosenArray[1] = true
         case self.buttonC:
             self.buttonC.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             self.buttonC.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
+            chosenArray[2] = true
         case self.buttonD:
             self.buttonD.setImage(#imageLiteral(resourceName: "like"), for: .normal)
             self.buttonD.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
+            chosenArray[3] = true
+        case self.buttonE:
+            self.buttonE.setImage(#imageLiteral(resourceName: "like"), for: .normal)
+            self.buttonE.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
+            chosenArray[4] = true
+        case self.buttonF:
+            self.buttonF.setImage(#imageLiteral(resourceName: "like"), for: .normal)
+            self.buttonF.addTarget(self, action: #selector(self.canceled), for: .touchUpInside)
+            chosenArray[5] = true
         default:
             break
         }
@@ -152,15 +184,27 @@ class ExamDetailTableViewMultipleCell: UITableViewCell {
         case self.buttonA:
             self.buttonA.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
             self.buttonA.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
+            chosenArray[0] = false
         case self.buttonB:
             self.buttonB.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
             self.buttonB.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
+            chosenArray[1] = false
         case self.buttonC:
             self.buttonC.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
             self.buttonC.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
+            chosenArray[2] = false
         case self.buttonD:
             self.buttonD.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
             self.buttonD.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
+            chosenArray[3] = false
+        case self.buttonE:
+            self.buttonE.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
+            self.buttonE.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
+            chosenArray[4] = false
+        case self.buttonF:
+            self.buttonF.setImage(#imageLiteral(resourceName: "star_grey"), for: .normal)
+            self.buttonF.addTarget(self, action: #selector(self.multiple), for: .touchUpInside)
+            chosenArray[5] = false
         default:
             break
         }
